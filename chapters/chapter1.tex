@@ -207,3 +207,74 @@ $$\vb{a}=(a_x, a_y, a_z)$$
   \norm{\vb{a} \cp \vb{b}} = ab \sin{\theta}
 \]
 로 정의되고, 이는 $\vb{a}$와 $\vb{b}$로 그려지는 평행사변형(그림 \placeholder의 초록색 부분)의 넓이와 같다.
+
+벡터의 외적에 대해서는 분배 법칙이 성립하지만 일반적으로 결합 법칙은 성립하지 않는다.
+
+\[
+  (\vb{a} \cp \vb{b}) \cp \neq \vb{a} \cp (\vb{b} \cp \vb{c})
+\]
+\[
+  \vb{a} \cp (\vb{b} + \vb{c}) = \vb{a} \cp \vb{b} + \vb{a} \cp \vb{c}
+\]
+
+한편, 교환 법칙은 성립하지 않으나 벡터의 순서가 뒤바뀌면 사잇각이 그대로 이므로 크기가 같고 방향이 반대인 벡터가 되며, 평행한 두 벡터의 외적은 사잇각이 0이므로 0이 된다.
+\[
+  \vb{a} \cp \vb{b} = - \vb{b} \cp \vb{a}, \quad \vb{a} \cp \vb{a} = 0
+\]
+
+데카르트 좌표계는 오른손 좌표계\footnote{$x$축에서 $y$축으로 오른손을 감아 쥐었을 때 $z$축의 방향이 엄지손가락의 방향이 되는 좌표계}이기 때문에, 기본 단위 벡터 둘을 순서대로 외적하면 나머지 기본 단위 벡터가 얻어진다.
+\[
+  \vb{e}_x \cp \vb{e}_y = \vb{e}_z, \quad \vb{e}_y \cp \vb{e}_z = \vb{e}_x, \quad \vb{e}_z \cp \vb{e}_x = \vb{e}_y
+\]
+곱의 순서가 바뀌면 $-$부호가 붙는다. 또한 같은 단위 벡터들의 외적은 0이다. 이로부터 벡터의 외적을 성분으로 나타내면 다음과 같다.
+\begin{align*}
+  \vb{a} \cp \vb{b} & = (a_x \vb{e}_x + a_y \vb{e}_y + a_z \vb{e}_z) \cp (b_x \vb{e}_x + b_y \vb{e}_y + b_z \vb{e}_z \\
+                    & = (a_y b_z - a_z b_y)\vb{e}_x + (a_z b_x - a_x b_z)\vb{e}_y + (a_x b_y - a_y b_x)\vb{e}_z
+\end{align*}
+외적은 성분으로 나타내면 $x, y, z$의 순서대로 반복적으로 성분과 기본 단위 벡터가 나타난다는 규칙성이 있으나 표현이 번잡하다. 행렬식의 계산에 익숙하다면 다음과 같은 표기가 더 간단할 수 있다.
+\[
+  \vb{a} \cp \vb{b} = \begin{vmatrix}
+    \vb{e}_x & \vb{e}_y & \vb{e}_z \\
+    a_x      & a_y      & a_z      \\
+    b_x      & b_y      & b_z
+  \end{vmatrix} = \begin{vmatrix}
+    a_y & a_z \\
+    b_y & b_z
+  \end{vmatrix} \vb{e}_x - \begin{vmatrix}
+    a_x & a_z \\
+    b_x & b_z
+  \end{vmatrix} \vb{e}_y + \begin{vmatrix}
+    a_x & a_y \\
+    b_x & b_y
+  \end{vmatrix} \vb{e}_z = \begin{pmatrix}
+    a_y b_z - a_z b_y \\
+    a_z b_x - a_x b_z \\
+    a_x b_y - a_y b_x
+  \end{pmatrix}
+\]
+
+\subsubsection{스칼라 삼중곱}
+다음과 같은 형태의 벡터곱을 스칼라 삼중곱(scalar triple product)이라 한다.
+\[
+  \vb{a} \vdot (\vb{b} \cp \vb{c}) = \begin{vmatrix}
+    a_x & a_y & a_z \\
+    b_x & b_y & b_z \\
+    c_z & c_y & c_z
+  \end{vmatrix}
+\]
+스칼라 삼중곱은 다음과 같이 순서대로 곱의 순서를 바꿀 수 있다.
+\[
+  \vb{a} \vdot (\vb{b} \cp \vb{c}) = \vb{b} \vdot (\vb{c} \cp \vb{a}) = \vb{c} \vdot (\vb{b} \cp \vb{a})
+\]
+또한 스칼라 삼중곱은 세 벡터를 세 변으로 가지는 평행육면체의 부피와 같다.
+
+\subsubsection{벡터 삼중곱}
+다음과 같은 형태의 곱을 벡터 삼중곱(vector triple product)이라 한다.
+\[
+  \vb{a} \cp (\vb{b} \cp \vb{c})
+\]
+벡터 삼중곱의 결과는 벡터이며 다음 등식을 만족한다.
+\[
+  \vb{a} \cp (\vb{b} \cp \vb{c}) = (\vb{a} \vdot \vb{c}) \vb{b} - (\vb{a} \vdot \vb{b}) \vb{c}
+\]
+이로부터 $\vb{a} \cp (\vb{b} \cp \vb{c})$는 $\vb{b}$와 $\vb{c}$를 포함하는 평면 속에 존재함을 알 수 있다.
